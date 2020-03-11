@@ -32,7 +32,7 @@ if(isset($_POST["submit"]))
 				<td width="70%">'.$_POST["school"].'</td>
 			</tr>
 			<tr>
-				<td width="30%">Additional Information</td>
+				<td width="30%">Ghi chú</td>
 				<td width="70%">'.$_POST["additional_information"].'</td>
 			</tr>
 		</table>
@@ -51,7 +51,7 @@ if(isset($_POST["submit"]))
 	$mail->AddAddress('baoquyhuy@gmail.com', 'Bao Quy Huy');		//Adds a "To" address
 	$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
 	$mail->IsHTML(true);							//Sets message type to HTML
-	$mail->AddAttachment($path);					//Adds an attachment from a path on the filesystem
+	$mail->addAttachment($path);					//Adds an attachment from a path on the filesystem
 	$mail->Subject = 'Application for Programmer Registration';				//Sets the Subject of the message
 	$mail->Body = $message;							//An HTML or plain text message body
 	if($mail->Send())								//Send an Email. Return true on success or false on error
