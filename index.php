@@ -42,7 +42,7 @@ if(isset($_POST["submit"]))
 	$mail = new PHPMailer;
 	$mail->IsSMTP();								//Sets Mailer to send message using SMTP
 	$mail->Host = 'smtp.mailtrap.io';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
-	$mail->Port = '587';								//Sets the default SMTP server port
+	$mail->Port = '2525';								//Sets the default SMTP server port
 	$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
 	$mail->Username = '9a71cead9af9ba';					//Sets SMTP username
 	$mail->Password = '7397269acf0581';					//Sets SMTP password
@@ -56,12 +56,12 @@ if(isset($_POST["submit"]))
 	$mail->Body = $message;							//An HTML or plain text message body
 	if($mail->Send())								//Send an Email. Return true on success or false on error
 	{
-		$message = '<div class="alert alert-success">Application Successfully Submitted</div>';
+		$message = '<div class="alert alert-success">Nộp bài thành công</div>';
 		unlink($path);
 	}
 	else
 	{
-		$message = '<div class="alert alert-danger">There is an Error</div>';
+		$message = '<div class="alert alert-danger">Lỗi</div>';
 	}
 }
 
@@ -121,7 +121,7 @@ if(isset($_POST["submit"]))
 							</div>
 						</div>
 						<div class="form-group" align="center">
-							<input type="submit" name="submit" value="Gửi" class="btn btn-info" />
+							<input type="submit" name="submit" value="Nộp bài" class="btn btn-info" />
 						</div>
 					</form>
 				</div>
